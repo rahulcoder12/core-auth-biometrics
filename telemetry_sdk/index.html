@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Client Test Page</title>
+    <style>
+        body { font-family: sans-serif; padding: 50px; background-color: #f4f4f9; }
+        textarea { width: 100%; height: 200px; padding: 10px; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <h1>Security Protected Form</h1>
+    <p>Start typing in the box below and move your mouse around. Check your VS Code backend terminal to see the data arriving!</p>
+    
+    <textarea placeholder="Type your story, poem, or just random words here..."></textarea>
+
+    <script src="./biometrics.js"></script>
+    
+    <script>
+        // In the real world, the client gets this snippet from your React dashboard
+        const tracker = new BiometricTracker(
+            'client_777_test', 
+            'http://127.0.0.1:8000/api/v1/telemetry' // Pointing to your local FastAPI server
+        );
+    </script>
+</body>
+</html>
